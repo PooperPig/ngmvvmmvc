@@ -7,9 +7,10 @@ import { CustomerDetailsComponent } from './customer-edit/customer-details/custo
 import { CustomerService } from './customer-edit/customer.service';
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 import { CustomerDataService } from './shared/customer-data.service';
+import { AddressComponent } from './shared/components/address/address.component';
 
 @NgModule({
-  declarations: [AppComponent, CustomerDetailsComponent, CustomerEditComponent],
+  declarations: [AppComponent, CustomerDetailsComponent, CustomerEditComponent, AddressComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [CustomerService, CustomerDataService],
   bootstrap: [AppComponent]

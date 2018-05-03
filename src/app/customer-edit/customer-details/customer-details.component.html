@@ -1,23 +1,15 @@
 <form novalidate (ngSubmit)="onSubmit(customerForm)" [formGroup]="customerForm">
-	<div>
-		<label>
-			<span>Full name</span>
-			<input type="text" class="input" formControlName="name">
-		</label>
-		<div formGroupName="address">
-			<label>
-				<span>Address</span>
-				<input type="text" class="input" formControlName="address">
-			</label>
-			<label>
-				<span>Post Code</span>
-				<input type="text" class="input" formControlName="postcode">
-			</label>
-		</div>
-	</div>
-	<div>
-		<button type="submit" [disabled]="customerForm.invalid">
-			Submit
-		</button>
-	</div>
+  <div>
+    <label>
+      <span>Full name</span>
+      <input type="text" class="input" formControlName="name">
+    </label>
+    <app-address [parentFormGroup]="customerForm" [address]="customer.address"></app-address>
+  </div>
+  <div>
+    <button type="submit" [disabled]="customerForm.invalid">
+      Submit
+    </button>
+  </div>
 </form>
+{{customerForm.value | json }}

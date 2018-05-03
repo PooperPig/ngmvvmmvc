@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from './customer.service';
 import { Customer } from '../shared/models/customer';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-customer-edit',
@@ -10,9 +11,9 @@ import { Customer } from '../shared/models/customer';
 export class CustomerEditComponent implements OnInit {
   constructor(private customerService: CustomerService) {}
 
-  public customer: Customer;
+  public customer$: Observable<Customer>;
 
   ngOnInit() {
-    this.customer = this.customerService.getCustomer(1);
+    this.customer$ = this.customerService.getCustomer(1);
   }
 }

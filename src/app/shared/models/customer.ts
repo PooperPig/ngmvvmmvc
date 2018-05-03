@@ -1,6 +1,7 @@
+import { Address } from './address';
+
 export class Customer {
   id: number;
   name: string;
-  address: string;
-  postcode: string;
+  address: Address;
 }
